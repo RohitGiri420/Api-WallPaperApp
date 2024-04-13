@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:wallpaperapp/Detail%20Screen.dart';
 import 'package:wallpaperapp/UiHElper.dart';
 
 import 'WallpaperModel.dart';
@@ -63,14 +64,19 @@ class _HomePageState extends State<HomePage> {
                           borderRadius: BorderRadius.circular(12),
                           borderSide: BorderSide(color: Colors.black38,width: 0.2)
                         ),
-                        child: Container(
-                          clipBehavior: Clip.antiAlias,
-                          height: 200,
-                          width: 340,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(12)
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => DetailScreen(imageUrl: photo.src!.portrait.toString()),));
+                          },
+                          child: Container(
+                            clipBehavior: Clip.antiAlias,
+                            height: 200,
+                            width: 340,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(12)
+                            ),
+                            child: Image.network(photo.src!.landscape.toString(),fit: BoxFit.cover,),
                           ),
-                          child: Image.network(photo.src!.landscape.toString(),fit: BoxFit.cover,),
                         ),
                       );
                   }).toList(),),
