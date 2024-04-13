@@ -1,4 +1,4 @@
-class WallpaperModel {
+class     WallpaperModel {
   int? page;
   int? perPage;
   List<Photos>? photos;
@@ -33,6 +33,8 @@ class WallpaperModel {
     return data;
   }
 }
+
+
 
 class Photos {
   int? id;
