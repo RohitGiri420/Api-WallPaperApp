@@ -12,8 +12,9 @@ class _DetailScreenState extends State<DetailScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(),
       body: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.only(bottom: 12,left: 12,right: 12),
         child: Container(
           height: double.infinity,
           width: double.infinity,
