@@ -8,6 +8,7 @@ import 'package:flutter/widgets.dart';
 import 'package:http/http.dart' as http;
 import 'package:wallpaperapp/Detail%20Screen.dart';
 import 'package:wallpaperapp/UiHElper.dart';
+import 'package:wallpaperapp/WallPaperScreen.dart';
 
 import 'WallpaperModel.dart';
 
@@ -45,9 +46,10 @@ class _HomePageState extends State<HomePage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             UiHelper().SearchBox(SearchController, () {
-              setState(() {
+
                 wallpaper = FetchData(SearchController.text);
-              });
+                Navigator.push(context, MaterialPageRoute(builder: (context) => WallPaperScreen(wallpaper: wallpaper),));
+
             }),
             SizedBox(
               height: 10,
