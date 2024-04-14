@@ -53,6 +53,9 @@ class _HomePageState extends State<HomePage> {
               height: 10,
             ),
             UiHelper().Heading("Best of the month"),
+
+
+            //Best Of the Month wallpaper
             FutureBuilder(
               future: wallpaper,
               builder: (context, snapshot) {
@@ -105,16 +108,21 @@ class _HomePageState extends State<HomePage> {
               },
             ),
             UiHelper().Heading("Category"),
+
+            // CategryTiles....................................................
             Expanded(
                 child: GridView.count(
                  crossAxisCount: 3,
                  children: [
-
                    UiHelper().CategoryTile("https://images.pexels.com/photos/11769989/pexels-photo-11769989.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", "Animal"),
                    UiHelper().CategoryTile("https://images.pexels.com/photos/919073/pexels-photo-919073.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", "car"),
                    UiHelper().CategoryTile("https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", "House"),
-                   UiHelper().CategoryTile("https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg?auto=compress&cs=tinysrgb&w=600", "Watch")
-                 
+                   UiHelper().CategoryTile("https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg?auto=compress&cs=tinysrgb&w=600", "Watch"),
+                   UiHelper().CategoryTile("https://images.pexels.com/photos/2531709/pexels-photo-2531709.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", "Sky"),
+                   UiHelper().CategoryTile("https://images.pexels.com/photos/2098427/pexels-photo-2098427.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", "Night sky"),
+                   UiHelper().CategoryTile("https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", "Sunset"),
+                   UiHelper().CategoryTile("https://images.pexels.com/photos/1395958/pexels-photo-1395958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", "Fruits"),
+                   UiHelper().CategoryTile("https://images.pexels.com/photos/2245436/pexels-photo-2245436.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", "Travel   ")
                  ],
             ))
           ],
