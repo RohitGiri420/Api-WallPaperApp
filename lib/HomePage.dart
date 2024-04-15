@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:http/http.dart' as http;
@@ -86,8 +85,8 @@ class _HomePageState extends State<HomePage> {
                             },
                             child: Container(
                               clipBehavior: Clip.antiAlias,
-                              height: 200,
-                              width: 350,
+                              height: 270,
+                              width: 190,
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(12)),
                               child: Image.network(
@@ -116,15 +115,42 @@ class _HomePageState extends State<HomePage> {
                 child: GridView.count(
                  crossAxisCount: 3,
                  children: [
-                   UiHelper().CategoryTile("https://images.pexels.com/photos/11769989/pexels-photo-11769989.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", "Animal"),
-                   UiHelper().CategoryTile("https://images.pexels.com/photos/919073/pexels-photo-919073.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", "car"),
-                   UiHelper().CategoryTile("https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", "House"),
-                   UiHelper().CategoryTile("https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg?auto=compress&cs=tinysrgb&w=600", "Watch"),
-                   UiHelper().CategoryTile("https://images.pexels.com/photos/2531709/pexels-photo-2531709.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", "Sky"),
-                   UiHelper().CategoryTile("https://images.pexels.com/photos/2098427/pexels-photo-2098427.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", "Night sky"),
-                   UiHelper().CategoryTile("https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", "Sunset"),
-                   UiHelper().CategoryTile("https://images.pexels.com/photos/1395958/pexels-photo-1395958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", "Fruits"),
-                   UiHelper().CategoryTile("https://images.pexels.com/photos/2245436/pexels-photo-2245436.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", "Travel   ")
+                   UiHelper().CategoryTile("https://images.pexels.com/photos/11769989/pexels-photo-11769989.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", "Animal",(){
+                     wallpaper = FetchData("animal");
+                     Navigator.push(context, MaterialPageRoute(builder: (context) => WallPaperScreen(wallpaper: wallpaper),));
+                   }),
+                   UiHelper().CategoryTile("https://images.pexels.com/photos/919073/pexels-photo-919073.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", "car",(){
+                     wallpaper = FetchData("car");
+                     Navigator.push(context, MaterialPageRoute(builder: (context) => WallPaperScreen(wallpaper: wallpaper),));
+                   }),
+                   UiHelper().CategoryTile("https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", "House",(){
+                     wallpaper = FetchData("House");
+                     Navigator.push(context, MaterialPageRoute(builder: (context) => WallPaperScreen(wallpaper: wallpaper),));
+                   }),
+                   UiHelper().CategoryTile("https://images.pexels.com/photos/190819/pexels-photo-190819.jpeg?auto=compress&cs=tinysrgb&w=600", "Watch",(){
+                     wallpaper = FetchData("Watch");
+                     Navigator.push(context, MaterialPageRoute(builder: (context) => WallPaperScreen(wallpaper: wallpaper),));
+                   }),
+                   UiHelper().CategoryTile("https://images.pexels.com/photos/2531709/pexels-photo-2531709.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", "Sky",(){
+                     wallpaper = FetchData("Sky");
+                     Navigator.push(context, MaterialPageRoute(builder: (context) => WallPaperScreen(wallpaper: wallpaper),));
+                   }),
+                   UiHelper().CategoryTile("https://images.pexels.com/photos/2098427/pexels-photo-2098427.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", "Night sky",(){
+                     wallpaper = FetchData("Night sky");
+                     Navigator.push(context, MaterialPageRoute(builder: (context) => WallPaperScreen(wallpaper: wallpaper),));
+                   }),
+                   UiHelper().CategoryTile("https://images.pexels.com/photos/36717/amazing-animal-beautiful-beautifull.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", "Sunset",(){
+                     wallpaper = FetchData("Sunset");
+                     Navigator.push(context, MaterialPageRoute(builder: (context) => WallPaperScreen(wallpaper: wallpaper),));
+                   }),
+                   UiHelper().CategoryTile("https://images.pexels.com/photos/1395958/pexels-photo-1395958.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", "Fruits",(){
+                     wallpaper = FetchData("Fruits");
+                     Navigator.push(context, MaterialPageRoute(builder: (context) => WallPaperScreen(wallpaper: wallpaper),));
+                   }),
+                   UiHelper().CategoryTile("https://images.pexels.com/photos/2245436/pexels-photo-2245436.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1", "Travel   ",(){
+                     wallpaper = FetchData("Travel");
+                     Navigator.push(context, MaterialPageRoute(builder: (context) => WallPaperScreen(wallpaper: wallpaper),));
+                   })
                  ],
             ))
           ],
@@ -144,4 +170,5 @@ class _HomePageState extends State<HomePage> {
       return WallpaperModel();
     }
   }
+
 }

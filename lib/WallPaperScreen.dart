@@ -45,12 +45,12 @@ class _WallPaperScreenState extends State<WallPaperScreen> {
                     },
                     child: Container(
                       clipBehavior: Clip.antiAlias,
-                      height: 200,
+                      height: 500,
                       width: 350,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(12)),
                       child: Image.network(
-                        photo.src!.landscape.toString(),
+                        photo.src!.portrait.toString(),
                         fit: BoxFit.cover,
                       ),
                     ),

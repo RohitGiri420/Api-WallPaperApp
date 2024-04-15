@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:wallpaperapp/HomePage.dart';
 
 class UiHelper{
 
@@ -40,37 +41,40 @@ class UiHelper{
   }
 
 
-  CategoryTile(String Url, String text){
+  CategoryTile(String Url, String text,VoidCallback ontap){
     return Padding(
       padding: const EdgeInsets.all(4.0),
-      child: Card(
-        elevation: 5,
-        shadowColor: Colors.black,
-        shape: OutlineInputBorder(borderRadius: BorderRadius.circular(8),borderSide: BorderSide(width: 3,color: Colors.white)),
-        child: Stack(
-          children: [
+      child: GestureDetector(
+        onTap: ontap,
+        child: Card(
+          elevation: 5,
+          shadowColor: Colors.black,
+          shape: OutlineInputBorder(borderRadius: BorderRadius.circular(8),borderSide: BorderSide(width: 3,color: Colors.white)),
+          child: Stack(
+            children: [
 
-            // BackGround Image Container
-            Container(
-              clipBehavior: Clip.antiAlias,
-              height: double.infinity,
-              width: double.infinity,
-              decoration: BoxDecoration(color: Colors.grey.shade50,borderRadius: BorderRadius.circular(8)),
-              child: Image.network("$Url",fit: BoxFit.fill,),
-            ),
-
-            //Filter and Text Container
-            Container(
-              clipBehavior: Clip.antiAlias,
-              height: double.infinity,
-              width: double.infinity,
-              decoration: BoxDecoration(borderRadius: BorderRadius.circular(8)),
-              child: ClipRect(
-                child: BackdropFilter(filter: ImageFilter.blur(sigmaY: 2.0,sigmaX: 2.0),child: Center(
-                    child: Text("$text",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w600,fontSize: 20),)),),
+              // BackGround Image Container
+              Container(
+                clipBehavior: Clip.antiAlias,
+                height: double.infinity,
+                width: double.infinity,
+                decoration: BoxDecoration(color: Colors.grey.shade50,borderRadius: BorderRadius.circular(8)),
+                child: Image.network("$Url",fit: BoxFit.fill,),
               ),
-            ),
-          ],
+
+              //Filter and Text Container
+              Container(
+                clipBehavior: Clip.antiAlias,
+                height: double.infinity,
+                width: double.infinity,
+                decoration: BoxDecoration(borderRadius: BorderRadius.circular(8)),
+                child: ClipRect(
+                  child: BackdropFilter(filter: ImageFilter.blur(sigmaY: 2.0,sigmaX: 2.0),child: Center(
+                      child: Text("$text",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w600,fontSize: 20),)),),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
